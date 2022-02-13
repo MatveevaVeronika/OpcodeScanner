@@ -1,0 +1,14 @@
+vld.lo: /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/vld.c
+	$(LIBTOOL) --mode=compile $(CC)   -I. -I/root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/vld.c -o vld.lo 
+srm_oparray.lo: /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/srm_oparray.c
+	$(LIBTOOL) --mode=compile $(CC)   -I. -I/root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/srm_oparray.c -o srm_oparray.lo 
+set.lo: /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/set.c
+	$(LIBTOOL) --mode=compile $(CC)   -I. -I/root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/set.c -o set.lo 
+branchinfo.lo: /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/branchinfo.c
+	$(LIBTOOL) --mode=compile $(CC)   -I. -I/root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/Desktop/OpcodeScanner/VLD_0.17.1_modified_version/branchinfo.c -o branchinfo.lo 
+$(phplibdir)/vld.la: ./vld.la
+	$(LIBTOOL) --mode=install cp ./vld.la $(phplibdir)
+
+./vld.la: $(shared_objects_vld) $(VLD_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS)  -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_vld) $(VLD_SHARED_LIBADD)
+
